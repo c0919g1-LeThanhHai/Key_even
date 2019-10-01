@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="Ready()">
+<img src="nobita.png" alt="nobita" id="nobita" width="100px" height="auto" style="position: absolute;left: 0;top: 0;">
+<script>
+    let nobita = document.getElementById("nobita");
+    function keyPressUp() {
+        nobita.style.top = parseInt(nobita.style.top) - 10 + "px";
+    }
+    function keyPressDown() {
+        nobita.style.top = parseInt(nobita.style.top) + 10 + "px";
+    }
+    function keyPressLeft() {
+        nobita.style.left = parseInt(nobita.style.left) - 10 + "px";
+    }
+    function keyPressRight() {
+        nobita.style.left = parseInt(nobita.style.left) + 10 + "px";
+    }
+    function move(evt) {
+        switch (evt.keyCode) {
+            case 37:keyPressLeft();break;
+            case 38:keyPressUp();break;
+            case 39:keyPressRight();break;
+            case 40:keyPressDown();break;
+        }
+    }
+    function Ready() {
+        window.addEventListener('keydown',move);
+    }
+</script>
+</body>
+</html>
